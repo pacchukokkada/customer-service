@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  prash_customer:
+    container_name: prash_customer
+    image: prash-customer
+    ports:
+      - 3000:80
+    expose:
+      - 80
+    env_file:
+      - /opt/prash/.env.prash
+    networks:
+      - prash-network
+    restart: always
+
+networks:
+  prash-network:
+    external: true
+  
+ 
+
